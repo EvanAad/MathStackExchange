@@ -6,15 +6,12 @@ Let $(\Omega, \mathcal{F}, P)$ be a probability space. Let $A_1, A_2, \dots \in 
 
 For every $n \in \{1, 2, \dots\}$,
 $$
-\frac{E\big(X_n^2\big)}{E^2(X_n)} \geq 1.
+\frac{E\big(X_n^2\big)}{E^2(X_n)} = 1 + \frac{V(X_n)}{E^2(X_n)}.
 $$
 
 **Proof**
 
-Let $n \in \{1, 2, \dots\}$. Then
-$$
-\frac{E\big(X_n^2\big)}{E^2(X_n)} = \frac{E^2(X_n) + V(X_n)}{E^2(X_n)} = 1 + \frac{V(X_n)}{E^2(X_n)} \geq 1.
-$$
+Let $n \in \{1, 2, \dots\}$. The conclusion is a consequence of the fundamental variance identity $V(X_n) = E\big(X_n^2\big) - E^2(X_n)$.
 
 Q.E.D.
 
@@ -56,18 +53,51 @@ $$
 
 Q.E.D.
 
-**Theorem 3**
+**Lemma 3**
+
+For every $n \in \{1, 2, \dots\}$,
+$$
+\frac{\sum_{i=1}^n\sum_{j=1}^nP(A_i\cap A_j)}{\big(\sum_{k=1}^nP(A_k)\big)^2} = \frac{E\big(X_n^2\big)}{E^2(X_n)}.
+$$
+
+**Proof**
+
+Let $n \in \{1, 2, \dots\}$. Then
+$$
+\begin{align}
+\sum_{k = 1}^nP(A_i) &= \sum_{k = 1}^nE\big(\mathbb{1}_{A_i}\big) \\
+&= E\bigg(\sum_{i = 1}^n\mathbb{1}_{A_i}\bigg) \\
+&= E(X_n) \\
+\sum_{i = 1}^n\sum_{j = 1}^nP(A_i\cap A_j) &= \sum_{i = 1}^n\sum_{j = 1}^nE\big(\mathbb{1}_{A_i\cap A_j}\big) \\
+&= \sum_{i = 1}^n\sum_{j = 1}^nE\big(\mathbb{1}_{A_i}\mathbb{1}_{A_j}\big) \\
+&= E\Bigg(\sum_{i = 1}^n\sum_{j = 1}^n\mathbb{1}_{A_i}\mathbb{1}_{A_j}\Bigg) \\
+&= E\Bigg(\Bigg(\sum_{k = 1}^n\mathbb{1}_{A_k}\Bigg)^2\Bigg) \\
+&= E\big(X_n^2\big)
+\end{align}
+$$
+
+Q.E.D.
+
+**Conclusion 4**
 
 1. For every $n \in \{1, 2, \dots\}$,
  $$
- \frac{\sum_{i=1}^n\sum_{j=1}^nP(A_iA_j)}{\big(\sum_{k=1}^nP(A_k)\big)^2} \geq 1.
+ \frac{\sum_{i=1}^n\sum_{j=1}^nP(A_i\cap A_j)}{\big(\sum_{k=1}^nP(A_k)\big)^2} \geq 1.
  $$
 
 2. If $\sum_{n = 1}^\infty P(A_n) = \infty$ and
  $$
- \underset{n\rightarrow\infty}{\underline{\lim}} \frac{\sum_{i=1}^n\sum_{j=1}^nP(A_iA_j)}{\big(\sum_{k=1}^nP(A_k)\big)^2} = 1,
+ \underset{n\rightarrow\infty}{\underline{\lim}} \frac{\sum_{i=1}^n\sum_{j=1}^nP(A_i\cap A_j)}{\big(\sum_{k=1}^nP(A_k)\big)^2} = 1,
  $$
  then $P\Big(\underset{n\rightarrow\infty}{\overline{\lim}}A_n\Big) = 1$.
+
+**Proof**
+
+1. A consequence of Lemma 3 and Lemma 1.
+
+2. A consequence of Lemma 3, Lemma 1, and Lemma 2.
+
+Q.E.D.
 
 **Corollary** If $\sum_{n = 1}^\infty P(A_n) = \infty$ and if the $A_n$'s are negatively correlated in the sense that for every $i, j \in \{1, 2, \dots\}$ such that $i\neq j$, $P(A_iA_j) \leq P(A_i)P(A_j)$, then $P\Big(\underset{n\rightarrow\infty}{\overline{\lim}}A_n\Big) = 1$.
 
