@@ -29,7 +29,7 @@ Choose an increasing sequence $n_1 < n_2 < \dots$ in $\{1, 2, \dots\}$ such that
 $$
 \sum_{k=1}^\infty \frac{V\big(X_{n_k}\big)}{E\big(X_{n_k}\big)} < \infty.
 $$
-Then for every $\varepsilon \in (0,\infty)$,
+Then for every $\varepsilon \in (0,1)$,
 $$
 \begin{align}
 \sum_{k = 1}^\infty P\Big((1-\varepsilon)E\big(X_{n_k}\big) \geq X_{n_k}\Big) &= \sum_{k = 1}^\infty P\big(E\big(X_{n_k}\big) - X_{n_k} \geq \varepsilon E\big(X_{n_k}\big)\big) \\
@@ -42,13 +42,13 @@ Hence by the Borel-Cantelli lemma
 $$
 P\bigg(X_{n_k} > (1-\varepsilon)E\big(X_{n_k}\big)\ \text{eventually}\bigg) = 1. \tag{*}\label{star}
 $$
-Since $\sup_{k \in \{1, 2, \dots\}}E\big(X_{n_k}\big) = \infty$, \eqref{star} implies that
+Since $\sup_{n \in \{1, 2, \dots\}}E\big(X_n\big) = \infty$, and since $X_1 \leq X_2 \leq \cdots$, $\sup_{k \in \{1, 2, \dots\}}E\big(X_{n_k}\big) = \infty$. Therefore \eqref{star} implies that
 $$
 P\bigg(\sup_{k\in\{1, 2, \dots\}} X_{n_k} = \infty\bigg) = 1.
 $$
 It remains to observe that
 $$
-\underset{n\rightarrow\infty}{\overline{\lim}}A_n = \bigg\{\sup_{n\in\{1, 2, \dots\}} X_n = \infty\bigg\}.
+\bigg\{\sup_{k\in\{1, 2, \dots\}} X_{n_k} = \infty\bigg\} = \underset{k\rightarrow\infty}{\overline{\lim}}A_{n_k} \subseteq \underset{n\rightarrow\infty}{\overline{\lim}}A_n.
 $$
 
 Q.E.D.
