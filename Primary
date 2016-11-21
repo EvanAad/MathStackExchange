@@ -17,7 +17,7 @@ Q.E.D.
 
 **Lemma 2**
 
-If $\sup_{n \in \{1, 2, \dots\}} E(X_n) = \infty$ and
+If $\sum_{n = 1}^\infty E(X_n) = \infty$ and
 $$
 \underset{n\rightarrow\infty}{\underline{\lim}}\frac{V(X_n)}{E^2(X_n)} = 0,
 $$
@@ -42,7 +42,17 @@ Hence by the Borel-Cantelli lemma
 $$
 P\bigg(X_{n_k} > (1-\varepsilon)E\big(X_{n_k}\big)\ \text{eventually}\bigg) = 1. \tag{*}\label{star}
 $$
-Since $\sup_{n \in \{1, 2, \dots\}}E\big(X_n\big) = \infty$, and since $X_1 \leq X_2 \leq \cdots$, $\sup_{k \in \{1, 2, \dots\}}E\big(X_{n_k}\big) = \infty$. Therefore \eqref{star} implies that
+Since
+$$
+\begin{align}
+\sup_{n \in \{1, 2, \dots\}}E\big(X_n\big) &= \sup_{n \in \{1, 2, \dots\}}E\bigg(\sum_{k = 1}^n\mathbb{1}_{A_k}\bigg)\\
+&= \sup_{n \in \{1, 2, \dots\}} \sum_{k = 1}^nE\big(\mathbb{1}_{A_k}\big) \\
+&= \sup_{n \in \{1, 2, \dots\}} \sum_{k = 1}^nP(A_k) \\
+&= \sum_{k = 1}^\infty P(A_k) \\
+&< \infty,
+\end{align}
+$$
+and since $X_1 \leq X_2 \leq \cdots$, $\sup_{k \in \{1, 2, \dots\}}E\big(X_{n_k}\big) = \infty$. Therefore \eqref{star} implies that
 $$
 P\bigg(\sup_{k\in\{1, 2, \dots\}} X_{n_k} = \infty\bigg) = 1.
 $$
