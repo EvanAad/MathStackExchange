@@ -26,6 +26,36 @@ $$
 $$
 then $P\big(\sup_{n \in \{1, 2, \dots\}} X_n\big) = 1$.
 
+**Proof**
+
+Choose an increasing sequence $n_1 < n_2 < \dots$ in $\{1, 2, \dots\}$ such that
+$$
+\sum_{k=1}^\infty \frac{V\big(X_{n_k}\big)}{E\big(X_{n_k}\big)} < \infty.
+$$
+Then for every $\varepsilon \in (0,\infty)$,
+$$
+\begin{align}
+\sum_{k = 1}^\infty P\Big((1-\varepsilon)E\big(X_{n_k}\big) \geq X_{n_k}\Big) &= \sum_{k = 1}^\infty P\big(E\big(X_{n_k}\big) - X_{n_k} \geq \varepsilon E\big(X_{n_k}\big)\big) \\
+&\leq \sum_{k = 1}^\infty P\Big(\big|X_{n_k} - E\big(X_{n_k}\big)\big| \geq \varepsilon E\big(X_{n_k}\big)\Big) \\
+&\overset{\text{Chebyshev}}{\leq} \sum_{k = 1}^\infty \frac{V\big(X_{n_k}\big)}{\varepsilon^2\ E^2\big(X_{n_k}\big)} \\
+&< \infty.
+\end{align}
+$$
+Hence by the Borel-Cantelli lemma
+$$
+P\bigg(X_{n_k} > (1-\varepsilon)E\big(X_{n_k}\big)\ \text{eventually}\bigg) = 1. \tag{*}\label{star}
+$$
+Since $\sup_{k \in \{1, 2, \dots\}}E\big(X_{n_k}\big) = \infty$, \eqref{star} implies that
+$$
+P\bigg(\sup_{k\in\{1, 2, \dots\}} X_{n_k} = \infty\bigg) = 1.
+$$
+Therefore
+$$
+P\bigg(\sup_{n\in\{1, 2, \dots\}} X_n = \infty\bigg) = 1.
+$$
+
+Q.E.D.
+
 **Theorem 3**
 
 1. For every $n \in \{1, 2, \dots\}$,
