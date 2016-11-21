@@ -51,7 +51,7 @@ P\bigg(\sup_{k\in\{1, 2, \dots\}} X_{n_k} = \infty\bigg) = 1.
 $$
 It remains to observe that
 $$
-P\bigg(\underset{n\rightarrow\infty}{\overline{\lim}}A_n\bigg) = P\bigg(\sup_{k\in\{1, 2, \dots\}} X_{n_k} = \infty\bigg).
+\underset{n\rightarrow\infty}{\overline{\lim}}A_n = \bigg\{\sup_{n\in\{1, 2, \dots\}} X_n = \infty\bigg\}.
 $$
 
 Q.E.D.
