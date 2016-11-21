@@ -24,7 +24,7 @@ If $\sup_{n \in \{1, 2, \dots\}} E(X_n) = \infty$ and
 $$
 \underset{n\rightarrow\infty}{\underline{\lim}}\frac{V(X_n)}{E^2(X_n)} = 0,
 $$
-then $P\big(\sup_{n \in \{1, 2, \dots\}} X_n\big) = 1$.
+then $P\bigg(\underset{n\rightarrow\infty}{\overline{\lim}}A_n\bigg) = 1$.
 
 **Proof**
 
@@ -48,6 +48,10 @@ $$
 Since $\sup_{k \in \{1, 2, \dots\}}E\big(X_{n_k}\big) = \infty$, \eqref{star} implies that
 $$
 P\bigg(\sup_{k\in\{1, 2, \dots\}} X_{n_k} = \infty\bigg) = 1.
+$$
+It remains to observe that
+$$
+P\bigg(\underset{n\rightarrow\infty}{\overline{\lim}}A_n\bigg) = P\bigg(\sup_{k\in\{1, 2, \dots\}} X_{n_k} = \infty\bigg).
 $$
 
 Q.E.D.
