@@ -78,7 +78,7 @@ $$
 
 Q.E.D.
 
-**Conclusion 4**
+**Corollary 4**
 
 1. For every $n \in \{1, 2, \dots\}$,
  $$
@@ -99,7 +99,25 @@ Q.E.D.
 
 Q.E.D.
 
-**Corollary** If $\sum_{n = 1}^\infty P(A_n) = \infty$ and if the $A_n$'s are negatively correlated in the sense that for every $i, j \in \{1, 2, \dots\}$ such that $i\neq j$, $P(A_iA_j) \leq P(A_i)P(A_j)$, then $P\Big(\underset{n\rightarrow\infty}{\overline{\lim}}A_n\Big) = 1$.
+**Theorem 5** If $\sum_{n = 1}^\infty P(A_n) = \infty$ and if the $A_n$'s are negatively correlated in the sense that for every $i, j \in \{1, 2, \dots\}$ such that $i\neq j$, $P(A_i\cap A_j) \leq P(A_i)P(A_j)$, then $P\Big(\underset{n\rightarrow\infty}{\overline{\lim}}A_n\Big) = 1$.
+
+**Proof**
+
+By Corollary 4 it suffices to show that
+$$
+\underset{n\rightarrow\infty}{\underline{\lim}} \frac{\sum_{i=1}^n\sum_{j=1}^nP(A_i\cap A_j)}{\big(\sum_{k=1}^nP(A_k)\big)^2} \leq 1.
+$$
+This is a consequence of the following observations.
+$$
+\begin{align}
+\frac{\sum_{i=1}^n\sum_{j=1}^nP(A_i\cap A_j)}{\big(\sum_{k=1}^nP(A_k)\big)^2} &\leq \frac{\sum_{i=1}^n\sum_{j=1}^nP(A_i)P(A_j)}{\big(\sum_{k=1}^nP(A_k)\big)^2} \\
+&= \frac{\big(\sum_{k = 1}^nP(A_k)\big)^2}{\big(\sum_{k=1}^nP(A_k)\big)^2} + \frac{\sum_{k = 1}^nP(A_k)\big(1 - P(A_k)\big)}{\big(\sum_{k=1}^nP(A_k)\big)^2} \\
+&\leq 1 + \frac{\sum_{k = 1}^nP(A_k)}{\big(\sum_{k=1}^nP(A_k)\big)^2} \\
+&= 1 + \frac{1}{\sum_{k=1}^nP(A_k)}.
+\end{align}
+$$
+
+Q.E.D.
 
 ***
 
