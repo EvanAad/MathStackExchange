@@ -1,6 +1,6 @@
 The following is essentially a reiteration of [1]'s first section ("Generalization of the Borel-Cantelli lemma").
 
-Let $(\Omega, \mathcal{F}, P)$ be a probability space. Let $A_1, A_2, \dots \in \mathcal{F}$ be an infinite sequence of events, at least one of which has a positive $P$-probability. For every $n \in \{1, 2, \dots\}$ define $X_n:\Omega\rightarrow\mathbb{R}$ to be the random variable $X_n := \sum_{k = 1}^n \mathbb{1}_{A_k}$.
+Let $(\Omega, \mathcal{F}, P)$ be a probability space. Let $A_1, A_2, \dots \in \mathcal{F}$ be an infinite sequence of positive events (i.e. $P(A_n) > 0$ for every $n \in \{1, 2, \dots\}$). Note that this implies, in particular, that for every $k \in \{1, 2, \dots\}$, $E\big(\mathbb{1}_{A_k}\big) > 0$. For every $n \in \{1, 2, \dots\}$ define $X_n:\Omega\rightarrow\mathbb{R}$ to be the random variable $X_n := \sum_{k = 1}^n \mathbb{1}_{A_k}$.
 
 **Lemma 1**
 
@@ -48,10 +48,6 @@ $$
 Since $\sup_{k \in \{1, 2, \dots\}}E\big(X_{n_k}\big) = \infty$, \eqref{star} implies that
 $$
 P\bigg(\sup_{k\in\{1, 2, \dots\}} X_{n_k} = \infty\bigg) = 1.
-$$
-Therefore
-$$
-P\bigg(\sup_{n\in\{1, 2, \dots\}} X_n = \infty\bigg) = 1.
 $$
 
 Q.E.D.
