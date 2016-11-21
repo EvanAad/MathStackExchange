@@ -6,8 +6,17 @@ Let $(\Omega, \mathcal{F}, P)$ be a probability space. Let $A_1, A_2, \dots \in 
 
 For every $n \in \{1, 2, \dots\}$,
 $$
-\frac{E(X_n^2)}{E^2(X_n)} \geq 1.
+\frac{E\big(X_n^2\big)}{E^2(X_n)} \geq 1.
 $$
+
+**Proof**
+
+Let $n \in \{1, 2, \dots\}$. Then
+$$
+\frac{E\big(X_n^2\big)}{E^2(X_n)} = \frac{E^2(X_n) + V(X_n)}{E^2(X_n)} = 1 + \frac{V(X_n)}{E^2(X_n)} \geq 1.
+$$
+
+Q.E.D.
 
 **Lemma 2**
 
